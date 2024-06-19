@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div class="product-grid">
+  @for (product of products; track product) {
+  <a [routerLink]="['/product', product.product_id]">
+    <app-product-card [product]="product"></app-product-card
+  ></a>
+  }
+</div>
