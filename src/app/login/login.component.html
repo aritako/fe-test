@@ -8,14 +8,8 @@
     </span>
   </div>
   <div class = "form">
-    <label for="email">
-      Email:
-      <input required id="email" type="email" [(ngModel)]="email" />
-    </label>
-    <label for="password">
-      Password:
-      <input required id="password" type="password" [(ngModel)]="password"/>
-    </label>
+    <input required id="email" type="email" [(ngModel)]="email" placeholder = "Email Address" />
+    <input required id="password" type="password" [(ngModel)]="password" placeholder = "Password" />
     <button class="login" (click)="submit()" [disabled]="invalid" [style.opacity]="invalid ? '0.5' : '1'">Login</button>
     <span class = "error">
       {{error}}
