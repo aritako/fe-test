@@ -17,10 +17,6 @@
       <a [routerLink]="['/product', product.product_id]">
         <app-product-card [product]="product"></app-product-card
       ></a>
-      <app-add-to-cart
-        [id]="product.product_id"
-        [product]="product"
-      ></app-add-to-cart>
     </div>
     }} @for (product of products; track product) { @if (product.type ===
     chosenType){
@@ -28,10 +24,6 @@
       <a [routerLink]="['/product', product.product_id]">
         <app-product-card [product]="product"></app-product-card
       ></a>
-      <app-add-to-cart
-        [id]="product.product_id"
-        [product]="product"
-      ></app-add-to-cart>
     </div>
     }}
   </div>
