@@ -18,12 +18,21 @@ export class AddToCartComponent {
     const cartItems: { product_id: string, quantity: number }[] = JSON.parse(localStorage.getItem('cartItems') || '[]');
     const existingItem = cartItems.find(cartItem => cartItem.product_id === this.id);
     if (existingItem) {
-      existingItem.quantity += 1;
+      existingItem.quantity += this.quantity;
     } else {
       cartItems.push({ product_id: this.id, quantity: 1 });
     }
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-    alert('Added to cart: ' + this.id);
+    alert('Added to cart: ' + this.product.name);
+  }
+  increment() {
+    this.quantity += 1;
+  }
+
+  decrement(){
+    if (this.quantity > 1) {
+      this.quantity -= 1;
+    }
   }
 }
