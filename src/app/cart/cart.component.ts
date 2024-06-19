@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrl: './cart.component.css',
 })
 export class CartComponent {
   cartItems: any[];
@@ -13,23 +13,22 @@ export class CartComponent {
     const cartItemsString = localStorage.getItem('cartItems');
     this.cartItems = cartItemsString ? JSON.parse(cartItemsString) : [];
   }
-  remove(id: string){
-    this.cartItems = this.cartItems.filter(item => item.product_id !== id);
+  remove(id: string) {
+    this.cartItems = this.cartItems.filter((item) => item.product_id !== id);
     localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
   }
-  decrement(id: string){
-    const item = this.cartItems.find(item => item.product_id === id);
+  decrement(id: string) {
+    const item = this.cartItems.find((item) => item.product_id === id);
     if (item) {
       item.quantity -= 1;
     }
     localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
   }
-  increment(id: string){
-    const item = this.cartItems.find(item => item.product_id === id);
+  increment(id: string) {
+    const item = this.cartItems.find((item) => item.product_id === id);
     if (item) {
       item.quantity += 1;
     }
     localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
   }
-
 }

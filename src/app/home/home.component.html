@@ -2,9 +2,10 @@
   <div class="navbar">
     <span>Search</span>
     <span>Make Home Beautiful</span>
-    <!-- <span>In cart: {{ cartQuantity }}</span> -->
     <app-go-to-cart></app-go-to-cart>
   </div>
+  <button [routerLink]="['/favorite']">Go to your favorites</button>
+
   <div class="carousel">
     @for (type of types; track type) {
     <button [type]="type" (click)="handleClick(type)">{{ type }}</button>
@@ -14,15 +15,23 @@
     @if (chosenType === 'Popular') { @for (product of products; track product) {
     <div class="product-card">
       <a [routerLink]="['/product', product.product_id]">
-        <app-product-card [product]="product"></app-product-card></a
-      ><app-add-to-cart [product]="product"></app-add-to-cart>
+        <app-product-card [product]="product"></app-product-card
+      ></a>
+      <app-add-to-cart
+        [id]="product.product_id"
+        [product]="product"
+      ></app-add-to-cart>
     </div>
     }} @for (product of products; track product) { @if (product.type ===
     chosenType){
     <div class="product-card">
       <a [routerLink]="['/product', product.product_id]">
-        <app-product-card [product]="product"></app-product-card></a
-      ><app-add-to-cart [product]="product"></app-add-to-cart>
+        <app-product-card [product]="product"></app-product-card
+      ></a>
+      <app-add-to-cart
+        [id]="product.product_id"
+        [product]="product"
+      ></app-add-to-cart>
     </div>
     }}
   </div>

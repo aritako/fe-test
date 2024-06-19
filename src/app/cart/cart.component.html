@@ -1,29 +1,29 @@
-<div class = "container">
-  <div class = "title">
-    <span class = "cart">My Cart</span>
-
+<div class="container">
+  <div class="title">
+    <span class="cart">My Cart</span>
   </div>
-  <div class = "body">
+  <div class="body">
     @for (item of cartItems; track item.product_id ){
-      <div class = "card-container">
-        <div class = "image">
-      
+    <div class="card-container">
+      <div class="image"></div>
+      <div class="details">
+        <div class="title">
+          <span>{{ item.product_id }}</span>
+          <button (click)="remove(item.product_id)">
+            <span class="material-icons">cancel</span>
+          </button>
         </div>
-        <div class = "details">
-          <div class = "title">
-            <span>{{item.product_id}}</span>
-            <button (click) = "remove(item.product_id)"><span class="material-icons">cancel</span></button>
-          </div>
-          <div class = "content">
-            <span>Price: $50</span>
-            <div class = "counter">
-              <button (click) = "increment(item.product_id)">+</button>
-              <span class = "count">{{item.quantity}}</span>
-              <button (click) = "decrement(item.product_id)">-</button>
-            </div>
+        <div class="content">
+          <span>Price: $50</span>
+          <div class="counter">
+            <button (click)="increment(item.product_id)">+</button>
+            <span class="count">{{ item.quantity }}</span>
+            <button (click)="decrement(item.product_id)">-</button>
           </div>
         </div>
       </div>
-    }    
+    </div>
+    }
   </div>
+  <button [routerLink]="['/success']">Check Out</button>
 </div>

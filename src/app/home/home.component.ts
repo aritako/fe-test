@@ -19,8 +19,8 @@ import { AddToCartComponent } from '../components/add-to-cart/add-to-cart.compon
 export class HomeComponent {
   @Input() products: any[] = products;
   chosenType: string = 'Popular';
-  cart = localStorage.getItem('cartItems');
-  cartQuantity = JSON.parse(this.cart || '[]')[0].quantity;
+  // cart = localStorage.getItem('cartItems');
+  // cartQuantity = JSON.parse(this.cart || '[]')[0].quantity;
 
   types: string[] = [
     'Popular',
@@ -30,10 +30,10 @@ export class HomeComponent {
   handleClick(chosenType: string) {
     console.log(chosenType);
     this.chosenType = chosenType;
-    this.cart = localStorage.getItem('cartItems');
-    this.cartQuantity = JSON.parse(this.cart || '[]')[0].quantity;
+    // this.cart = localStorage.getItem('cartItems');
+    // this.cartQuantity = JSON.parse(this.cart || '[]')[0].quantity;
   }
   ngOnInit() {
-    console.log(this.cartQuantity);
+    // console.log(this.cartQuantity);
   }
 }
