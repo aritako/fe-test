@@ -1,11 +1,8 @@
-import { Component, Input, Injectable } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import products from '../products';
 import { ProductCardComponent } from '../components/product-card/product-card.component';
 import { GoToCartComponent } from '../components/go-to-cart/go-to-cart.component';
 import { RouterModule } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -16,22 +13,15 @@ import { switchMap } from 'rxjs/operators';
 })
 export class HomeComponent {
   @Input() products: any[] = products;
+  chosenType: string = 'Popular';
+  types: string[] = [
+    'Popular',
+    ...new Set(products.map((product) => product.type)),
+  ];
 
-  // constructor(private route: ActivatedRoute) {}
-
-  // products$!: Observable<any>;
-  // selectedId!: number;
-
-  // ngOnInit() {
-  //   this.products$ = this.route.paramMap.pipe(
-  //     switchMap((params) => {
-  //       this.selectedId = Number(params.get('id'));
-  //       for (const product of this.products) {
-  //         if (product.id === this.selectedId) {
-  //           return product;
-  //         }
-  //       }
-  //     })
-  //   );
-  // }
+  handleClick(chosenType: string) {
+    console.log(chosenType);
+    this.chosenType = chosenType;
+  }
+  ngOnInit() {}
 }
