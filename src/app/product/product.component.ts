@@ -2,10 +2,11 @@ import { Component, Input } from '@angular/core';
 import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import products from '../products';
 import { Observable } from 'rxjs';
+import { AddToCartComponent } from '../components/add-to-cart/add-to-cart.component';
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, AddToCartComponent],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
 })
