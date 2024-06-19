@@ -1,5 +1,4 @@
-
-[
+export default [
 	{
 		"type":"chair",
 		"name":"Black Simple Lamp",
@@ -92,4 +91,4 @@
 		"review_count":1,
 		"stock":1
 	}
-]
+];
