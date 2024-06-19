@@ -3,3 +3,19 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px
 }
+
+.carousel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
