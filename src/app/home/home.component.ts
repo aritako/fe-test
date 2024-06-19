@@ -18,18 +18,17 @@ import { AddToCartComponent } from '../components/add-to-cart/add-to-cart.compon
 })
 export class HomeComponent {
   @Input() products: any[] = products;
-  chosenType: string = 'Popular';
+  chosenType: string = 'popular';
   // cart = localStorage.getItem('cartItems');
   // cartQuantity = JSON.parse(this.cart || '[]')[0].quantity;
 
-  types: string[] = [
-    'Popular',
-    ...new Set(products.map((product) => product.type)),
-  ];
+  types: string[] = ['Popular', 'Chair', 'Table', 'Armchair', 'Bed'];
+  //   ...new Set(products.map((product) => product.type)),
+  // ];
 
   handleClick(chosenType: string) {
     console.log(chosenType);
-    this.chosenType = chosenType;
+    this.chosenType = chosenType.toLowerCase();
     // this.cart = localStorage.getItem('cartItems');
     // this.cartQuantity = JSON.parse(this.cart || '[]')[0].quantity;
   }

@@ -111,3 +111,9 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+button {
+  background-color: #FFFFFF;
+  border: none;
+  padding: 5px 10px;
+}

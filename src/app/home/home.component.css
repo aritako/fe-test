@@ -5,8 +5,8 @@
 }
 
 .carousel {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .navbar {
@@ -23,4 +23,22 @@
 .product-card {
     display: flex;
     flex-direction: column;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+}
+
+.subtitle {
+    font-weight: bold;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

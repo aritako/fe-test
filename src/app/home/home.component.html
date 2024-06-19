@@ -1,18 +1,25 @@
 <div class="main">
   <div class="navbar">
-    <span>Search</span>
-    <span>Make Home Beautiful</span>
+    <span class="material-icons">search</span>
+    <div class="title">
+      <span>MAKE HOME</span>
+      <span class="subtitle">BEAUTIFUL</span>
+    </div>
     <app-go-to-cart></app-go-to-cart>
   </div>
   <button [routerLink]="['/favorite']">Go to your favorites</button>
 
   <div class="carousel">
     @for (type of types; track type) {
-    <button [type]="type" (click)="handleClick(type)">{{ type }}</button>
+    <div class="category">
+      <button [type]="type" (click)="handleClick(type)">
+        <span class="material-icons">star</span></button
+      ><span>{{ type }}</span>
+    </div>
     }
   </div>
   <div class="product-grid">
-    @if (chosenType === 'Popular') { @for (product of products; track product) {
+    @if (chosenType === 'popular') { @for (product of products; track product) {
     <div class="product-card">
       <a [routerLink]="['/product', product.product_id]">
         <app-product-card [product]="product"></app-product-card
