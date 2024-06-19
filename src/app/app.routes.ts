@@ -40,5 +40,5 @@ export const routes: Routes = [
   {
     path: 'success',
     component: CongratsComponent,
-  }
+  },
 ];
