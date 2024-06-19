@@ -19,3 +19,8 @@
     flex-direction: column;
     gap: 20px;
 }
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+}

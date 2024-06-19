@@ -3,10 +3,11 @@ import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import products from '../products';
 import { Observable } from 'rxjs';
 import { AddToCartComponent } from '../components/add-to-cart/add-to-cart.component';
+import { AddToFavoriteComponent } from '../components/add-to-favorite/add-to-favorite.component';
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [RouterModule, AddToCartComponent],
+  imports: [RouterModule, AddToCartComponent, AddToFavoriteComponent],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
 })

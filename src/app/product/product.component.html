@@ -10,5 +10,6 @@
   <p>Quantity: {{ product.stock }}</p>
   <p>Review Count ({{ product.review_count }})</p>
   <p>{{ product.description }}</p>
-  <app-add-to-cart [id] = "id" [product] = "product"></app-add-to-cart>
+  <app-add-to-favorite [id]="id" [product]="product"></app-add-to-favorite>
+  <app-add-to-cart [id]="id" [product]="product"></app-add-to-cart>
 </div>
