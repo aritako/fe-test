@@ -1,4 +1,9 @@
 <div>
+  <img
+    [src]="product.main_image"
+    alt="{{ product.name }}"
+    class="img-product"
+  />
   <p>{{ product.name }}</p>
   <p>$ {{ product.price }}</p>
   <p>Rating: {{ product.rating }}</p>

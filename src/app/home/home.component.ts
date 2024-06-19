@@ -1,6 +1,7 @@
 import { Component, Input, Injectable } from '@angular/core';
 import products from '../products';
 import { ProductCardComponent } from '../components/product-card/product-card.component';
+import { GoToCartComponent } from '../components/go-to-cart/go-to-cart.component';
 import { RouterModule } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -9,7 +10,7 @@ import { switchMap } from 'rxjs/operators';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ProductCardComponent, RouterModule],
+  imports: [ProductCardComponent, RouterModule, GoToCartComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
