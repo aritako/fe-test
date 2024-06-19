@@ -1,1 +1,21 @@
-<p>signup works!</p>
+<div class = "container">
+  <div class = "greeting">
+    <span class = "welcome">
+      WELCOME
+    </span>
+  </div>
+  <div class = "form">
+    <input required id="name" type="text" [(ngModel)]="name" placeholder = "Name"/>
+    <input required id="email" type="email" [(ngModel)]="email" placeholder = "Email Address"/>
+    <input required id="password" type="password" [(ngModel)]="password" placeholder = "Password"/>
+    <input required id="cpassword" type="password" [(ngModel)]="cpassword" placeholder = "Confirm Password"/>
+    <button class="login" (click)="submit()" [disabled]="invalid" [style.opacity]="invalid ? '0.5' : '1'">Sign up</button>
+    <span class = "error">
+      {{error}}
+    </span>
+    <span class = "signin">
+      <span style = "color: gray;">Already have an account? </span>
+      <a routerLink = "/login">Sign In</a>
+    </span>
+  </div>
+</div>

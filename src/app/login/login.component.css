@@ -2,8 +2,8 @@
   display:flex;
   flex-direction: column;
   height: 100vh;
-  width: 100%;
   gap: 32px;
+  padding: 16px;
   padding-top: 128px;
 }
 
@@ -15,13 +15,21 @@
 
 .form{
   display: flex;
+  justify-content: center;
   flex-direction: column;
   gap: 16px;
+  border-radius: 5px;
+  box-shadow: 0 0 32px #ccc;
+  padding: 40px 16px;
 }
 
-.form > label {
-  display:flex;
-  flex-direction:column;
+
+.form > input {
+  height: 48px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  padding-left: 8px;
 }
 
 .hello, .welcome{
@@ -34,4 +42,25 @@
   color: red;
   font-size: 0.8rem;
   font-style: italic;
+  margin: 0 auto;
+}
+
+.login{
+  background-color: #242424;
+  border-radius: 16px;
+  height: 70px;
+  font-size: 1.2rem;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  margin-top: 24px;
+}
+
+.signup{
+  margin: 0 auto;
+}
+
+.signup > a {
+  text-decoration: none;
+  color: #242424;
+  transition: 300;
 }
