@@ -1,1 +1,9 @@
-<button>Add to cart</button>
+<div class = "container">
+  <div class = "counter">
+    <button (click) = "increment()">+</button>
+    <span class = "count">{{ quantity }}</span>
+    <button (click) = "decrement()">-</button>
+  </div>
+  <button (click) = "addToCart()">Add to cart</button>
+</div>
+

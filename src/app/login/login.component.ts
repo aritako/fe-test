@@ -28,6 +28,7 @@ export class LoginComponent {
       }, 60000);
     } else if (this.emailPattern.test(this.email) && this.password == 'Testpassw0rd1') {
       this.error = '';
+      this.attempts = 0;
       this.router.navigate(['/home']);
     } else {
       this.error = 'Invalid email or password! You have ' + (3 - this.attempts) + ' attempts left';

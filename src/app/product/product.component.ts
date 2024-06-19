@@ -13,7 +13,6 @@ import { AddToCartComponent } from '../components/add-to-cart/add-to-cart.compon
 export class ProductComponent {
   @Input() product: any;
   products: any[] = products;
-
   id!: string | null;
 
   constructor(private route: ActivatedRoute) {}
@@ -23,6 +22,7 @@ export class ProductComponent {
       this.id = params.get('id');
       this.product = this.getProductById(this.id);
     });
+    console.log(this.product);
   }
 
   getProductById(id: string | null): any {
