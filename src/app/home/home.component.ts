@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Injectable } from '@angular/core';
 import products from '../products';
 import { ProductCardComponent } from '../components/product-card/product-card.component';
 import { RouterModule } from '@angular/router';
@@ -15,5 +15,22 @@ import { switchMap } from 'rxjs/operators';
 })
 export class HomeComponent {
   @Input() products: any[] = products;
-  constructor(private route: ActivatedRoute) {}
+
+  // constructor(private route: ActivatedRoute) {}
+
+  // products$!: Observable<any>;
+  // selectedId!: number;
+
+  // ngOnInit() {
+  //   this.products$ = this.route.paramMap.pipe(
+  //     switchMap((params) => {
+  //       this.selectedId = Number(params.get('id'));
+  //       for (const product of this.products) {
+  //         if (product.id === this.selectedId) {
+  //           return product;
+  //         }
+  //       }
+  //     })
+  //   );
+  // }
 }
