@@ -1,1 +1,8 @@
-<p>favorite works!</p>
+<div>
+  <h3>Favorites</h3>
+  @for (product of products; track product) { @if
+  (favoriteItemIds.includes(product.product_id)) {
+  <p>{{ product.name }}</p>
+  <p>{{ product.price }}</p>
+  } }
+</div>
